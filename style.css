@@ -1,0 +1,89 @@
+*{
+    box-sizing:border-box;
+}
+body{
+    padding: 0;
+    margin:0;
+    width:100%;
+    height: 100vh;
+}
+
+.span-container{
+    width: 60px;
+    height:30px;
+    margin-right: auto;
+}
+.span-container span{
+    fill:#F1641e;
+}
+.span-luv{
+
+    padding: 12px;
+    padding-right: 10px;
+}
+.sign-in button{
+    background: transparent;
+    border: none;
+    font-weight: 600;
+}
+.sign-in{
+    padding: 9px 6px;
+    margin-right: 6px;
+}
+.header-child-one{
+    display:flex;
+    padding:0px 9px;
+    align-items: center;
+    justify-content: space-between;
+    height: 46px;
+
+}
+.basket-svg-container{
+    padding: 12px;
+}
+.second-child-container{
+    display:flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content:space-between;
+    text-align: center;
+    width: 259px;
+    /* background:rgba(34, 34, 34, 0.05); */
+    border-radius: 50px;
+    border:2px solid black;
+    height: 48px;
+    flex: 1;
+    margin-right: 9px;
+}
+.input-container{
+    display:flex;
+    flex-direction:row;
+}
+.second-child-container input::placeholder{
+   font-size: 16px;
+}
+.second-child-container:focus-within{
+    outline: 2px solid rgb(42, 42, 185);
+    outline-offset: 2px;
+    background: linear-gradient(to right, white 74%, rgba(34, 34, 34, 0.05) 30%)!important;
+}
+.second-child-container:focus{
+   background-color: black;
+}
+
+.toggle-bar-container{
+    padding: 12px;
+}
+.second-child-container input{
+    padding-left: 20px;
+    width:61%;
+}
+.text-after-header h3{
+    font-weight: 400;
+}
+.faded{
+    background-color: linear-gradient(to right, white 74%, rgba(34, 34, 34, 0.05) 30%)!important;
+}
+.h2-header{
+  text-align: center;
+}
