@@ -19,14 +19,18 @@ const dataBase = [
 
     {name:"header-toggle-bar",
 
-        path:`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px" aria-hidden="true" focusable="false">
+        path:`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px" style="margin:1px;" aria-hidden="true" focusable="false">
       <path d="M20 7H4c-.6 0-1-.4-1-1s.4-1 1-1h16c.6 0 1 .4 1 1s-.4 1-1 1zm-4.8 6H4c-.6 0-1-.4-1-1s.4-1 1-1h11.2c.6 0 1 .4 1 1s-.4 1-1 1zm4.8 6H4c-.6 0-1-.4-1-1s.4-1 1-1h16c.6 0 1 .4 1 1s-.4 1-1 1z"></path>
     </svg>`
      },
    {
      name:'header-search-bar-svg',
-     path:'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24px" width="24px" focusable="false"><path d="M10,18a8,8,0,1,1,8-8A8.009,8.009,0,0,1,10,18ZM10,4a6,6,0,1,0,6,6A6.007,6.007,0,0,0,10,4Z"></path><path d="M21,22a1,1,0,0,1-.707-0.293l-4-4a1,1,0,0,1,1.414-1.414l4,4A1,1,0,0,1,21,22Z"></path></svg>'
+     path:'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24px" width="24px" style="margin-right:20px;" focusable="false"><path d="M10,18a8,8,0,1,1,8-8A8.009,8.009,0,0,1,10,18ZM10,4a6,6,0,1,0,6,6A6.007,6.007,0,0,0,10,4Z"></path><path d="M21,22a1,1,0,0,1-.707-0.293l-4-4a1,1,0,0,1,1.414-1.414l4,4A1,1,0,0,1,21,22Z"></path></svg>'
 
+     },
+     {
+        name:'text-header',
+        text:'  Discover One-of-a-kind items from independent creators',
      }
 
 ]
@@ -49,17 +53,31 @@ mainContainer.innerHTML = `<div class ='header-container'>
                               <div class="basket-svg-container">
                               ${dataBase[3].path}
                             </svg></span>
+                              </div>        
                               </div>
-                             
-                              </div>
-                              <div class ="second-child-container">
+                              <div class="input-container">
                               <div class="toggle-bar-container">
-                                ${dataBase[4].path}
+                              ${dataBase[4].path}
+                            </div>
+                              <div class ="second-child-container">
+                                <input type="text" id="input-one" style="outline:none; background:transparent; border:none;" placeholder="Search for anything">
+                                ${dataBase[5].path}
                               </div>
-                              <div class="input-container-header">
-                                <input type="text" placeholder="Search for anything">
-                                <
                               </div>
-                              </div>
-                            </div>`
-// console.log(mainContainer)
+                            </div>
+                            <section>
+                            <div class="container-class">
+                            <div class="text-after-header">
+                            <h3 class="h2-header">
+                            ${dataBase[6].text}
+                            </h3>
+                            </div>
+                            </div>
+                            </section>`
+
+                        //    const input =document.getElementById('input-one')
+                        //    const container =document.querySelector('.second-child-container')
+                        //    input.addEventListener('click',()=>{
+                        //               container.classList.toggle('faded')
+                                      
+                        //    })
