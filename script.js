@@ -65,6 +65,9 @@ const dataBase = [
     name:"new-section-text",
     textP:"Editors' Picks",
     texth1:"For your home",
+    text3:"Diwali Finds",
+    text4:"shop these unique finds",
+    text5:"Let light and luck into your home with handmade diyas, vibrant rangolis,"
   },
   // {
   //   name:"new-section-text-component",
@@ -245,8 +248,7 @@ function foo(){
         // const newEl = document.createElement('polygon')
         // svgEl.appendChild(newEl)
       //  newEl.setAttribute("points",element.points)
-     
-      
+
       }
   
     }
@@ -262,3 +264,21 @@ foo()
 //  console.log(section),
 //  console.log(divInSection)
 //   }
+function foot(){
+const Data = document.querySelector('.second-section-component-container')
+const createTextDiv = document.createElement('div')
+const createTextDiv2 = document.createElement('div')
+createTextDiv.classList.add('text-cont')
+createTextDiv2.classList.add('text-cont-el')
+Data.appendChild(createTextDiv)
+Data.appendChild(createTextDiv2)
+  dataBase.map((elements)=>{
+    if(elements.name === 'new-section-text'){
+       createTextDiv.innerHTML =` <p>${elements.textP}</p><h1> ${elements.text3}</h1><a>${elements.text5}</a>`
+       createTextDiv2.innerHTML =`<P>${elements.text4}</p>`
+    }
+
+  
+  })
+}
+foot()
