@@ -368,8 +368,14 @@ max-width: 100%;
         position: relative;
     }
 }
-@media only screen and(max-width:640px){
-    .container-image img{
-    
+@media only screen and (max-width:640px){
+.price {
+        display: none;
+    }
+    .text-cont{
+        display: none;
+    }
+    .text-cont-el{
+        display: none;
     }
 }
