@@ -98,13 +98,14 @@ const dataBase = [
     path:"https://i.etsystatic.com/12251572/r/il/ceec61/1630040351/il_680x540.1630040351_7h10.jpg",
     price:"6,756",
     tag:"₹",
+    discount:0
   },
   {
     name:'new-section-component',
     path:"https://i.etsystatic.com/17781666/c/2702/2148/150/…/e403c3/3334116247/il_680x540.3334116247_a85n.jpg",
     tag:"₹",
     price:"1,985",
-    discount:"10"
+    discount:0
    
   },
   {
@@ -112,14 +113,14 @@ const dataBase = [
     path:'https://i.etsystatic.com/16676438/c/2738/2174/0/25…/55aac5/1476320786/il_680x540.1476320786_8hkr.jpg',
     points:"4 4 4 20 20 12 4 4",
     price:"1,562",
-    discount:"20",
+    discount:0,
     tag:"₹",
   },
   {
     name:"new-section-component",
     path:'	https://i.etsystatic.com/21689103/c/1896/1507/664/…/4aad15/3549482360/il_680x540.3549482360_62rn.jpg',
     price:"1,665",
-    discount:"25",
+    discount:0,
     tag:"₹",
   },
   {
@@ -127,7 +128,7 @@ const dataBase = [
     path:"https://i.etsystatic.com/19698147/r/il/611f5f/3139648139/il_680x540.3139648139_srk0.jpg",
     tag:"₹",
     price:"2,714",
-    discount:"20",
+    discount:0,
   },
   {name: "new-section-component",
    path:"https://i.etsystatic.com/33029693/c/563/447/0/38/il/812218/3617933329/il_680x540.3617933329_agsq.jpg",
@@ -264,8 +265,20 @@ console.log(element.tag)
       divComp.appendChild(componentMainContainer)
       const priceTag = document.createElement('p')
       const Pan = document.createElement('span')
-      console.log(element.tag)
-       Pan.innerHTML = `<span>${element.tag}</span>${element.price}<span></span><span></span>`
+     let realPrice =  element.price 
+     realPrice = parseInt(realPrice.replace(',',"").trim(''))
+     let discountRate = element.discount
+     let discountPrice = realPrice * discountRate / 100
+     console.log(discountPrice)
+     let NewPirce = realPrice - discountPrice
+     console.log(NewPirce)
+     if (discountRate==0){
+             Pan.innerHTML = `<span>${element.tag}</span><span id="span-p"></span><span>${element.price}</span>`}
+             else{
+     
+              Pan.innerHTML = `<span>${element.tag}</span><span id="span-p">${NewPirce}</span><span id="elem-tag"><span>${element.tag}</span><span id="elem">${element.price}</span></span>`
+          
+             }
       // priceTag.style.position = "absolute"
       priceTag.appendChild(Pan).classList.add('span-to')
       Pan.classList.add('price-span')
@@ -391,3 +404,6 @@ if(windowWidth > 640){
   Elmnt.appendChild(divImg)
   console.log('appended')
 }
+const spanTaG =  document.getElementById('elem-tag')
+      
+spanTaG.style.textDecoration = "line-through"

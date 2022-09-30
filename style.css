@@ -350,7 +350,7 @@ border-radius: 100%;
         background-repeat: no-repeat;
         margin-left: 6px;
         padding-bottom: 2px;
-        top: -2px;
+       
     }
     .second-section-component-container div:nth-child(6){
 grid-column: -23/-15;
@@ -359,16 +359,53 @@ height: 69%;
 max-width: 100%;
     }
     .price{
-        width: 64.45px;
-        height: 27px;
+        width:fit-content;
+        height: 23px;
         padding: 10px;
         z-index: 100000;
-        top: 89px;
+        bottom: 13px;
         left: 7px;
         position: absolute;
+        background-color: #fff;
+        display: flex;
+        align-content: center;
+        margin: 0;
+        justify-content: center;
+        border-radius: 20px;
+        padding: 0;
+        opacity: 1;
+        transition: 0.9s ease;
     }
+ 
     .container-image{
         position: relative;
+    }
+ .price .span-to span{
+        font-size: 12px;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        padding-left: 2px;
+        justify-content: center;
+    
+    }
+    .span-to{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 0px 5px;
+        margin-right: 3px;
+    }
+    .span-to span:nth-child(1){
+        margin-left: 2px;
+    }
+    .elem{
+        margin-left: 3px;
+    }
+    .elem-tag{
+        margin-left: 4px;
     }
 }
 @media only screen and (max-width:640px){
@@ -381,4 +418,9 @@ max-width: 100%;
     .text-cont-el{
         display: none;
     }
+}
+@media screen and (max-width:764px){
+.price{
+    display: none;
+}
 }
