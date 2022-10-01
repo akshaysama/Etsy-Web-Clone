@@ -1,3 +1,4 @@
+
 let countIdx = 0
 const dataBase = [
   {
@@ -113,14 +114,14 @@ const dataBase = [
     path:'https://i.etsystatic.com/16676438/c/2738/2174/0/25…/55aac5/1476320786/il_680x540.1476320786_8hkr.jpg',
     points:"4 4 4 20 20 12 4 4",
     price:"1,562",
-    discount:0,
+    discount:10,
     tag:"₹",
   },
   {
     name:"new-section-component",
     path:'	https://i.etsystatic.com/21689103/c/1896/1507/664/…/4aad15/3549482360/il_680x540.3549482360_62rn.jpg',
     price:"1,665",
-    discount:0,
+    discount:20,
     tag:"₹",
   },
   {
@@ -135,7 +136,7 @@ const dataBase = [
    points:"4 4 4 20 20 12 4 4",
    tag:"₹",
    price:"2,146",
-   discount:"10"
+   discount:0
   },
    {
     xmlns:"http://www.w3.org/2000/svg",
@@ -275,9 +276,29 @@ console.log(element.tag)
      if (discountRate==0){
              Pan.innerHTML = `<span>${element.tag}</span><span id="span-p"></span><span>${element.price}</span>`}
              else{
+              ////////creating elements and adding values to the discount rate
      
-              Pan.innerHTML = `<span>${element.tag}</span><span id="span-p">${NewPirce}</span><span id="elem-tag"><span>${element.tag}</span><span id="elem">${element.price}</span></span>`
-          
+              // Pan.innerHTML = `<span>${element.tag}</span><span id="span-p">${NewPirce}</span><span id="elem-tag"><span>${element.tag}</span><span id="elem">${element.price}</span></span>`
+              const span1 =   document.createElement('span')
+                Pan.appendChild(span1)
+                Pan.innerHTML = `${element.tag}`
+                const span2 = document.createElement('span')
+                span2.setAttribute('id','span-p')
+                Pan.appendChild(span2)
+                span2.innerHTML = `${NewPirce}`
+                const span3 = document.createElement('span')
+                span3.setAttribute('id','elem-tag')
+                Pan.appendChild(span3)
+                const span31 = document.createElement('span')
+                span31.setAttribute('id','elem2-tag')
+                span3.appendChild(span31)
+                span31.innerHTML = `${element.tag}`
+                const span32 = document.createElement('span')
+                span32.setAttribute('id','elem')
+                span3.appendChild(span32)
+                span32.innerHTML = `${element.price}`
+             
+
              }
       // priceTag.style.position = "absolute"
       priceTag.appendChild(Pan).classList.add('span-to')
@@ -311,7 +332,6 @@ console.log(element.tag)
       //  newEl.setAttribute("points",element.points)
 
       }
-  
     }
   })
 }
@@ -404,6 +424,8 @@ if(windowWidth > 640){
   Elmnt.appendChild(divImg)
   console.log('appended')
 }
-const spanTaG =  document.getElementById('elem-tag')
-      
-spanTaG.style.textDecoration = "line-through"
+
+//////// for line through the old rate
+const ElemNt = document.querySelectorAll('#elem-tag')
+for(i=0; i<ElemNt.length;i++){
+ElemNt[i].style.textDecoration ='line-through'}
