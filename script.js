@@ -99,7 +99,7 @@ const dataBase = [
     path:"https://i.etsystatic.com/12251572/r/il/ceec61/1630040351/il_680x540.1630040351_7h10.jpg",
     price:"6,756",
     tag:"₹",
-    discount:0
+    discount:58
   },
   {
     name:'new-section-component',
@@ -261,9 +261,16 @@ console.log(element.tag)
     }
     if(element.name==='new-section-component'){
       countIdx++
-      const componentMainContainer = document.createElement('div')
+       const componentMainContainer = document.createElement('div')
+      // componentMainContainer.appendChild(hoverIcon)
       componentMainContainer.classList.add('container-image')
       divComp.appendChild(componentMainContainer)
+      const hoverDiv = document.createElement('div')
+      componentMainContainer.appendChild(hoverDiv)
+      hoverDiv.classList.add('hover-div')
+      const spanH1 = document.createElement('span')
+      hoverDiv.appendChild(spanH1)
+      spanH1.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12,21C10.349,21,2,14.688,2,9,2,5.579,4.364,3,7.5,3A6.912,6.912,0,0,1,12,5.051,6.953,6.953,0,0,1,16.5,3C19.636,3,22,5.579,22,9,22,14.688,13.651,21,12,21ZM7.5,5C5.472,5,4,6.683,4,9c0,4.108,6.432,9.325,8,10,1.564-.657,8-5.832,8-10,0-2.317-1.472-4-3.5-4-1.979,0-3.7,2.105-3.721,2.127L11.991,8.1,11.216,7.12C11.186,7.083,9.5,5,7.5,5Z"></path></svg>'
       const priceTag = document.createElement('p')
       const Pan = document.createElement('span')
      let realPrice =  element.price 
@@ -271,32 +278,32 @@ console.log(element.tag)
      let discountRate = element.discount
      let discountPrice = realPrice * discountRate / 100
      console.log(discountPrice)
-     let NewPirce = realPrice - discountPrice
+     let NewPirce =parseInt(realPrice - discountPrice)
      console.log(NewPirce)
      if (discountRate==0){
-             Pan.innerHTML = `<span>${element.tag}</span><span id="span-p"></span><span>${element.price}</span>`}
+             Pan.innerHTML = `<span id="ok-span" style="font-weight:900">${element.tag}</span><span style ="font-weight: 900">${element.price}</span>`}
              else{
-              ////////creating elements and adding values to the discount rate
+              ////////creating elements and adding values to the discount r
      
-              // Pan.innerHTML = `<span>${element.tag}</span><span id="span-p">${NewPirce}</span><span id="elem-tag"><span>${element.tag}</span><span id="elem">${element.price}</span></span>`
-              const span1 =   document.createElement('span')
-                Pan.appendChild(span1)
-                Pan.innerHTML = `${element.tag}`
-                const span2 = document.createElement('span')
-                span2.setAttribute('id','span-p')
-                Pan.appendChild(span2)
-                span2.innerHTML = `${NewPirce}`
-                const span3 = document.createElement('span')
-                span3.setAttribute('id','elem-tag')
-                Pan.appendChild(span3)
-                const span31 = document.createElement('span')
-                span31.setAttribute('id','elem2-tag')
-                span3.appendChild(span31)
-                span31.innerHTML = `${element.tag}`
-                const span32 = document.createElement('span')
-                span32.setAttribute('id','elem')
-                span3.appendChild(span32)
-                span32.innerHTML = `${element.price}`
+              Pan.innerHTML = `<span style="font-weight:800">${element.tag}</span><span id="span-p" style="font-weight:800">${NewPirce}</span><span id="elem-tag"><span>${element.tag}</span><span id="elem">${element.price}</span></span>`
+              // const span1 =   document.createElement('span')
+              //   Pan.appendChild(span1)
+              //   Pan.innerHTML = `${element.tag}`
+              //   const span2 = document.createElement('span')
+              //   span2.setAttribute('id','span-p')
+              //   Pan.appendChild(span2)
+              //   span2.innerHTML = `${NewPirce}`
+              //   const span3 = document.createElement('span')
+              //   span3.setAttribute('id','elem-tag')
+              //   Pan.appendChild(span3)
+              //   const span31 = document.createElement('span')
+              //   span31.setAttribute('id','elem2-tag')
+              //   span3.appendChild(span31)
+              //   span31.innerHTML = `${element.tag}`
+              //   const span32 = document.createElement('span')
+              //   span32.setAttribute('id','elem')
+              //   span3.appendChild(span32)
+              //   span32.innerHTML = `${element.price}`
              
 
              }
@@ -429,3 +436,5 @@ if(windowWidth > 640){
 const ElemNt = document.querySelectorAll('#elem-tag')
 for(i=0; i<ElemNt.length;i++){
 ElemNt[i].style.textDecoration ='line-through'}
+////////////
+
