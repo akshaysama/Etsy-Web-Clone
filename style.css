@@ -459,3 +459,8 @@ max-width: 100%;
     display: none;
 }
 }
+@media screen and (min-width:1200px){
+    .second-section-component-container{
+        grid-row-gap:78px;
+    }
+}
