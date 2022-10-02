@@ -1,5 +1,5 @@
 // console.log( require('./dataBase'))
-import{dataBase} from "./dataBase.js"
+import dataBase from "./dataBase.json" assert{type:'json'};
 // import dataBase, { find, map } from "./dataBase.js";
 let countIdx = 0
 // const dataBase = [
