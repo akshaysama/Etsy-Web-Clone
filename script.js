@@ -154,11 +154,11 @@ const mainContainer = document.querySelector("#main-container");
 // console.log(mainContainer)
 mainContainer.innerHTML = `<div class ='header-container'>
                               <div class="header-child-one">
-                              <div class ="header-etsy">
+                              
                               <div class="span-container">
                                  <span>${dataBase[0].pathEtsy}<span>
                               </div>
-                              </div>
+                            
                               <div class="header-sign-in">
                               <div class="sign-in">
                               <button>${dataBase[1].content}</button>
@@ -173,7 +173,7 @@ mainContainer.innerHTML = `<div class ='header-container'>
                             </svg></span>
                               </div>
                               </div>        
-                              </div>
+                              
                               <div class="input-container">
                               <div class="toggle-bar-container">
                               <a>
@@ -184,6 +184,8 @@ mainContainer.innerHTML = `<div class ='header-container'>
                                 ${dataBase[5].path}
                               </div>
                               </div>
+                            </div>
+                            <div class="header-list">
                             </div>
                             <section>
                             <div class="container-class">
@@ -202,6 +204,8 @@ mainContainer.innerHTML = `<div class ='header-container'>
                             <section class="component-section">
                             <div class="text-container"></div>
                             </section>`
+
+                            
 
 //    const input =document.getElementById('input-one')
 //    const container =document.querySelector('.second-child-container')
