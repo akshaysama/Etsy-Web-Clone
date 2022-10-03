@@ -18,6 +18,10 @@ body{
     height: 100vh;
     font-family: 'Graphik Webfont';
 }
+.image-in-component:hover{
+    scale: 1.1;
+    /* box-shadow: 0 0  10px rgb(199, 193, 193); */
+}
 .span-container{
     width: 60px;
     height:30px;
@@ -25,10 +29,10 @@ body{
     padding-top: 2px;
     margin-right: auto;
 }
-.header-container{
+/* .header-container{
     margin: 0 auto;
     max-width: 1355px;
-}
+} */
 .component-section{
     margin: 0 auto;
     max-width: 1355px;
@@ -55,6 +59,8 @@ body{
 }
 .header-child-one{
     display:flex;
+    margin: 0 auto;
+    max-width: 1277px;
     padding:0px 9px;
     align-items: center;
     max-height: 96px;
@@ -111,7 +117,7 @@ border-radius: 100%;
 .text-after-header h3{
     font-weight: 400;
     font-size: 20px;
-    margin-top: 12px;
+    margin-top: 10px;
     line-height: 32px;
 }
 .faded{
@@ -494,6 +500,15 @@ max-width: 100%;
     .container-image{
         height:17vw !important ;
     }
+    .text-cont a::after{
+        top: -3px;
+
+    }
+}
+@media only screen and (max-width:900px){
+    .header-list{
+        display: none;
+    }
 }
 @media only screen and (min-width:900px){
     .span-container{
@@ -504,7 +519,7 @@ max-width: 100%;
         margin-left: 0;
     }
     .header-child-one{
-        padding: 6px 33px;
+        padding: 8px 33px;
     }
     .input-container{
         flex: 1;
@@ -517,4 +532,42 @@ max-width: 100%;
     .toggle-bar-container{
         display: none;
     }
+
+    .header-list ul{
+        display: flex;
+        font-size: 13px;
+        justify-content: space-between;
+        align-items: center;
+        margin:0;
+    }
+    .header-list ul li{
+        width: -webkit-fill-available;
+        margin-right: 12px;
+        line-height: 17.9px;
+    }
+    .second-child-container{
+        margin-right: 23.5px;
+    }
+    .image-in-component{
+        max-width: 114px;
+    }
+}
+@media only screen and (min-width:1500px){
+    .header-list ul{
+        max-width: 1206px;
+        margin: 0 auto;
+        padding: 0;
+    }
+    .header-list ul li{
+        margin: 0;
+        width: auto;
+    }
+    .component-parent-container{
+        max-width: 1080px;
+        margin: 0 auto;
+    }
+    .container-class{
+        background: linear-gradient(to bottom, #D7E6F5 69.2%,white 20%)
+    }
+
 }
