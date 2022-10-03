@@ -154,11 +154,11 @@ const mainContainer = document.querySelector("#main-container");
 // console.log(mainContainer)
 mainContainer.innerHTML = `<div class ='header-container'>
                               <div class="header-child-one">
-                              <div class ="header-etsy">
+                              
                               <div class="span-container">
                                  <span>${dataBase[0].pathEtsy}<span>
                               </div>
-                              </div>
+                            
                               <div class="header-sign-in">
                               <div class="sign-in">
                               <button>${dataBase[1].content}</button>
@@ -173,7 +173,7 @@ mainContainer.innerHTML = `<div class ='header-container'>
                             </svg></span>
                               </div>
                               </div>        
-                              </div>
+                              
                               <div class="input-container">
                               <div class="toggle-bar-container">
                               <a>
@@ -184,6 +184,8 @@ mainContainer.innerHTML = `<div class ='header-container'>
                                 ${dataBase[5].path}
                               </div>
                               </div>
+                            </div>
+                            <div class="header-list">
                             </div>
                             <section>
                             <div class="container-class">
@@ -202,6 +204,38 @@ mainContainer.innerHTML = `<div class ='header-container'>
                             <section class="component-section">
                             <div class="text-container"></div>
                             </section>`
+
+
+                          //////header list media query
+                            const listContainer = document.querySelector('.header-list')
+                            const ul = document.createElement('ul')
+                            ul.style.listStyle = 'none'
+                            listContainer.appendChild(ul)
+              dataBase.map((elementex)=>{
+               if(elementex.name ==='header-list'){
+                let count = 0
+                
+                
+                const listArray = elementex.text.split(',')
+                console.log(listArray.length)
+                const lastArrayElement = listArray.pop()
+                console.log(listArray.length)
+                for(let i=0;i < listArray.length;i++){
+                  count ++
+                  console.log(count)
+                  console.log(listArray[i])
+                  const li = document.createElement('li')
+                  ul.appendChild(li)
+                  li.innerHTML=`${listArray[i]}`
+                 if(count === listArray.length){
+                  const li = document.createElement('li')
+                  ul.appendChild(li)
+                  li.innerHTML+=`${elementex.svg} ${lastArrayElement}`}
+                }
+                console.log(listArray)
+               }
+                 
+              })  
 
 //    const input =document.getElementById('input-one')
 //    const container =document.querySelector('.second-child-container')
