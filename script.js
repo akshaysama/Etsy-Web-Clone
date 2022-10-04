@@ -217,13 +217,12 @@ mainContainer.innerHTML = `<div class ='header-container'>
                 
                 
                 const listArray = elementex.text.split(',')
-                console.log(listArray.length)
+           
                 const lastArrayElement = listArray.pop()
-                console.log(listArray.length)
+               
                 for(let i=0;i < listArray.length;i++){
                   count ++
-                  console.log(count)
-                  console.log(listArray[i])
+                
                   const li = document.createElement('li')
                   ul.appendChild(li)
                   li.innerHTML=`${listArray[i]}`
@@ -232,7 +231,6 @@ mainContainer.innerHTML = `<div class ='header-container'>
                   ul.appendChild(li)
                   li.innerHTML+=`${elementex.svg} ${lastArrayElement}`}
                 }
-                console.log(listArray)
                }
                  
               })  
@@ -262,13 +260,11 @@ mainContainer.innerHTML = `<div class ='header-container'>
 // }
 // foo()
 let width = window.innerWidth
-console.log(width)
 const secondSec = document.querySelector(".component-section")
 const divComp = document.createElement('div')
 divComp.classList.add('second-section-component-container')
 secondSec.appendChild(divComp)
 
-console.log(secondSec)
 
 
 const parentContainer = document.querySelector('.picture-container')
@@ -279,7 +275,6 @@ const parentContainerElmnt = document.querySelector('.component-parent-container
 
 function foo(){
   const dataArray = dataBase.map((element,index)=>{
-console.log(element.tag)
     if (element.name === 'discover-item-component'){
           parentContainerElmnt.innerHTML += `<div class="component-container"><div class ="image-in-component"> <img src=${element.path}></div><div class="p-tag-component"><p>${element.text}</p></div>`
     }
@@ -313,17 +308,22 @@ console.log(element.tag)
      realPrice = parseInt(realPrice.replace(',',"").trim(''))
      let discountRate = element.discount
      let discountPrice = realPrice * discountRate / 100
-     console.log(discountPrice)
+    
      let NewPirce =parseInt(realPrice - discountPrice)
     //  const tagie = NewPirce.split()
     //  console.log(tagie)
-     console.log(NewPirce)
+    let sty = NewPirce.toString().split('')
+  ///adding comma
+    sty.splice(1,0,',');
+    console.log(sty)
+    const newPrice = sty.join('')
+    console.log(newPrice)
      if (discountRate==0){
              Pan.innerHTML = `<span id="ok-span" style="font-weight:900">${element.tag}</span><span style ="font-weight: 900">${element.price}</span>`}
              else{
               ////////creating elements and adding values to the discount r
      
-              Pan.innerHTML = `<span style="font-weight:800">${element.tag}</span><span id="span-p" style="font-weight:800">${NewPirce}</span><span id="elem-tag"><span>${element.tag}</span><span id="elem">${element.price}</span></span>`
+              Pan.innerHTML = `<span style="font-weight:800">${element.tag}</span><span id="span-p" style="font-weight:800">${newPrice}</span><span id="elem-tag"><span>${element.tag}</span><span id="elem">${element.price}</span></span>`
               // const span1 =   document.createElement('span')
               //   Pan.appendChild(span1)
               //   Pan.innerHTML = `${element.tag}`
