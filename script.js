@@ -1,5 +1,8 @@
 // console.log( require('./dataBase'))
+
 import dataBase from "./dataBase.js"
+
+
 // import dataBase, { find, map } from "./dataBase.js";
 let countIdx = 0
 // const dataBase = [

@@ -1,4 +1,5 @@
-@font-face{
+
+  @font-face{
     font-family: 'Graphik Webfont';
     src:url('assets/Graphik-Regular-Web.woff2') format('woff2'),
         url('assets/Graphik-Medium-Web.woff2') format('woff2')
