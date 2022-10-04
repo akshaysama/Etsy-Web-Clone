@@ -313,11 +313,27 @@ function foo(){
     //  const tagie = NewPirce.split()
     //  console.log(tagie)
     let sty = NewPirce.toString().split('')
-  ///adding comma
-    sty.splice(1,0,',');
-    console.log(sty)
-    const newPrice = sty.join('')
-    console.log(newPrice)
+      
+     console.log(sty)
+     let styLength = sty.length - 3
+           sty.splice(styLength,0,',')
+      let newPrice =  sty.join('')
+     console.log(sty)
+
+
+  //    if(sty.length === 5){
+  //     sty.splice(2,0,',')
+  //     console.log(sty)
+  //     newPrice = sty.join('')
+  //   }
+  // ///adding comma
+  // if (sty.length === 4){
+  //   sty.splice(1,0,',');
+  //   console.log(sty)
+  //    newPrice = sty.join('')
+  //    console.log(newPrice)
+  //   }
+   
      if (discountRate==0){
              Pan.innerHTML = `<span id="ok-span" style="font-weight:900">${element.tag}</span><span style ="font-weight: 900">${element.price}</span>`}
              else{
